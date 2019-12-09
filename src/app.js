@@ -1,6 +1,7 @@
 const express = require("express");
+require("dotenv-safe").load();
 const bodyParser = require("body-parser");
-// const index = require("./routes/index");
+const index = require("./routes/index"); 
 const usuarios = require("./routes/usuariosRoutes");
 const database = require("./model/database");
 const app = express();
@@ -19,7 +20,7 @@ app.use(function (request, response, next) {
   })
   
 
-// app.use("/", index)
+app.use("/", index)
 app.use("/usuarios", bodyParser.json(), usuarios)
 
 
