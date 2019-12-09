@@ -5,8 +5,6 @@ const SEGREDO = process.env.SEGREDO
 
 const autenticarUsuario = (request, response, next) => {
     const authHeader = request.get("authorization")
-    let autenticado = false
-
     if (!authHeader) {
         return response.status(403).json({ "erro": "Não autorizado" })
     }
@@ -22,9 +20,6 @@ const autenticarUsuario = (request, response, next) => {
     next()
 }
 router.post("/", controller.add)
-
-
-router.get("/", autenticarUsuario, controller.getUsuarios)
 router.post("/login", controller.login)
 
 
