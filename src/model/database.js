@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 //caminho do banco de dados
-const DB_URL = process.env.MONGODB_URI || 'mongodb://localhost/desafio-concrete-backend'
+const DB_URL = process.env.MONGODB_URI
 
 const connect = () => {
     mongoose.connect(DB_URL, {useNewUrlParser:true})
