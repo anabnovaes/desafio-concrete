@@ -1,5 +1,5 @@
 const express = require("express");
-require("dotenv-safe").load();
+require("dotenv-safe");
 const bodyParser = require("body-parser");
 const index = require("./routes/index"); 
 const usuarios = require("./routes/usuariosRoutes");
